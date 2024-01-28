@@ -2,6 +2,6 @@
 {
     public interface IWeatherForecastRepository
     {
-        WeatherForecastModels[] GetForecasts();
+        Task<WeatherForecastModels[]> GetForecasts();
     }
 }

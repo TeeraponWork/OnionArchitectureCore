@@ -1,5 +1,6 @@
 ﻿using OnionArchitectureCore.Domain;
 using OnionArchitectureCore.Domain.Interfaces;
+using OnionArchitectureCore.Domain.Result;
 
 namespace OnionArchitectureCore.Application
 {
@@ -11,9 +12,9 @@ namespace OnionArchitectureCore.Application
         {
             _weatherForecastRepository = weatherForecastRepository;
         }
-        public List<WeatherForecastModels> ProcessFTemperature()
+        public async Task<List<WeatherForecastModels>> ProcessFTemperature()
         {
-            var forecasts = _weatherForecastRepository.GetForecasts();
+            var forecasts = await _weatherForecastRepository.GetForecasts();
             var processed = new List<WeatherForecastModels>();
             foreach (var f in forecasts)
             {
@@ -22,6 +23,7 @@ namespace OnionArchitectureCore.Application
             }
 
             return processed;
+            //return ResultMessage<object>.Success(processed);
         }
     }
 }

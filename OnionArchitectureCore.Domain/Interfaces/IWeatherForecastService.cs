@@ -1,7 +1,10 @@
-﻿namespace OnionArchitectureCore.Domain.Interfaces
+﻿using OnionArchitectureCore.Domain.Result;
+
+namespace OnionArchitectureCore.Domain.Interfaces
 {
     public interface IWeatherForecastService
     {
-        List<WeatherForecastModels> ProcessFTemperature();
+        Task<List<WeatherForecastModels>> ProcessFTemperature();
+        //Task<ResultModel<object>> ProcessFTemperature();
     }
 }

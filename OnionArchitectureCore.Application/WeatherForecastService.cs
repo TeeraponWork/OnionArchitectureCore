@@ -1,6 +1,5 @@
 ﻿using OnionArchitectureCore.Domain;
 using OnionArchitectureCore.Domain.Interfaces;
-using OnionArchitectureCore.Domain.Result;
 
 namespace OnionArchitectureCore.Application
 {

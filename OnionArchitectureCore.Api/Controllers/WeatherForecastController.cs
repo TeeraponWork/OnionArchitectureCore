@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnionArchitectureCore.Domain;
 using OnionArchitectureCore.Domain.Interfaces;
 using OnionArchitectureCore.Domain.Result;
@@ -18,6 +19,7 @@ namespace OnionArchitectureCore.Api.Controllers
             _weatherForecastService = weatherForecastService;
         }
 
+        [Authorize]
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<IActionResult> Get()
         {
